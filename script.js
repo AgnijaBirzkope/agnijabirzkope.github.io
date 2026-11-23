@@ -19,10 +19,30 @@
     });
   });
 
-  if (canHover) wrap.addEventListener('mouseleave', () => activate(null));
+  /* ---------- phone only: the cards stay pinned and the one you have scrolled to opens ---------- */
+  // desktop is untouched: cards open on hover and close when the mouse leaves
+  const work = document.getElementById('work');
+  const phone = window.matchMedia('(max-width: 820px)');
+  let scrollIdx = -1;
+  const idxFromScroll = () => {
+    const room = work.offsetHeight - wrap.offsetHeight;          // how far the cards stay pinned
+    const done = Math.min(Math.max(-work.getBoundingClientRect().top + parseFloat(getComputedStyle(wrap).top), 0), room);
+    return Math.min(panels.length - 1, Math.floor((room > 0 ? done / room : 0) * panels.length));
+  };
+  const syncToScroll = () => {
+    if (!phone.matches) return;
+    const idx = idxFromScroll();
+    if (idx !== scrollIdx) { scrollIdx = idx; activate(panels[idx]); }
+  };
+  addEventListener('scroll', syncToScroll, { passive: true });
+  phone.addEventListener('change', () => { scrollIdx = -1; if (phone.matches) syncToScroll(); else activate(null); });
+  syncToScroll();
+
+  // mouse leaves: close everything (on a narrow window, go back to the card for the scroll position)
+  if (canHover) wrap.addEventListener('mouseleave', () => activate(phone.matches ? panels[idxFromScroll()] : null));
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') { activate(null); document.activeElement.blur(); }
+    if (e.key === 'Escape') { activate(null); scrollIdx = -1; document.activeElement.blur(); }
   });
 
   /* ---------- fade sections in as they scroll into view ---------- */

@@ -102,6 +102,11 @@ ul { list-style: none; }
 
 /* ---------- work (cards) ---------- */
 .work { padding-top: 0; scroll-margin-top: var(--bar-h); }
+/* phone only: tall on purpose, so the cards stay pinned while you scroll and the card you have scrolled to opens */
+@media (max-width: 820px) {
+  .work { height: calc(100svh - var(--bar-h) + 220svh); }
+  .panels { position: sticky; top: var(--bar-h); }
+}
 
 /* ---------- row of cards ---------- */
 .panels {
