@@ -212,29 +212,3 @@
     } catch (e) { /* if anything fails, the original image just stays */ }
   });
 })();
-
-/* ---------- email: click copies the address and says so ---------- */
-(() => {
-  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-    const mark = link.querySelector('i');
-    const original = mark ? mark.textContent : '';
-    const address = link.getAttribute('href').replace('mailto:', '');
-    let timer;
-    if (mark) mark.setAttribute('aria-live', 'polite');
-    link.addEventListener('click', async (e) => {
-      e.preventDefault();
-      try {
-        await navigator.clipboard.writeText(address);
-      } catch (err) {
-        // clipboard blocked: fall back to opening the mail app
-        window.location.href = link.getAttribute('href');
-        return;
-      }
-      if (!mark) return;
-      clearTimeout(timer);
-      mark.textContent = 'Copied';
-      link.classList.add('is-copied');
-      timer = setTimeout(() => { mark.textContent = original; link.classList.remove('is-copied'); }, 2000);
-    });
-  });
-})();
