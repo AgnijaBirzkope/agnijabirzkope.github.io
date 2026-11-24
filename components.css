@@ -68,9 +68,21 @@ site-header, site-footer { display: contents; }
 .contact__links a.is-copied i { transform: none; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
 .contact__foot { margin-top: 56px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .contact__foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* tablet: the heading and the link list stack and use the whole width, the way the rest of the page does */
+@media (min-width: 821px) and (max-width: 1100px) {
+  .contact { padding: 72px 28px 28px; }
+  .contact__row { flex-direction: column; align-items: stretch; gap: 36px; }
+  .contact__lead { font-size: clamp(52px, 9vw, 88px); max-width: none; }
+  .contact__links { width: 100%; }
+}
 @media (max-width: 820px) {
   .contact { padding: 44px 16px 20px; }
   .contact__foot { margin-top: 32px; }
 }
 
 @media (prefers-reduced-motion: reduce) { .contact__links a, .contact__links a i { transition: none; } }
+@media (min-width: 621px) and (max-width: 820px) {
+  .contact__row { flex-direction: column; align-items: stretch; gap: 32px; }
+  .contact__lead { font-size: clamp(44px, 9vw, 72px); max-width: none; }
+  .contact__links { width: 100%; }
+}
