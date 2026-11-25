@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adi Atelier case study — Agnija Birzkope</title>
+  <meta name="description" content="A fashion design app where designers share their work and enter competitions backed by Adidas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="case.css">
+  <script src="components.js"></script>
+  <script src="case.js" defer></script>
+</head>
+<body class="case" style="--accent:#ff9900">
+
+  <site-header></site-header>
+
+  <nav class="index" aria-label="Sections"><ol><li><a href="#context"><i class="index__node"></i><span>The brief</span></a></li><li><a href="#testing"><i class="index__node"></i><span>User testing</span></a></li><li><a href="#identity"><i class="index__node"></i><span>Visual identity</span></a></li><li><a href="#changes"><i class="index__node"></i><span>Changes after testing</span></a></li><li><a href="#development"><i class="index__node"></i><span>Development</span></a></li></ol></nav>
+
+  <main id="top">
+
+<header class="hero">
+  <div class="wide hero__top">
+    <nav class="crumbs" aria-label="Projects"><a href="index.html#work">All projects</a><a href="learneez.html">Next project</a></nav>
+    <p class="hero__lead">A fashion design app where designers share their work and enter competitions backed by Adidas.</p>
+  </div>
+  <h1 class="hero__band"><span class="wide">Adi Atelier</span></h1>
+  <div class="wide hero__bottom">
+    <div class="hero__cta">
+      <p class="hero__note">A school project, not affiliated with Adidas</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Duration</dt><dd>3 months</dd></div>
+      <div><dt>Role</dt><dd>UX/UI redesign, user testing &amp; front end</dd></div>
+      <div><dt>Team</dt><dd>Group project of three</dd></div>
+      <div><dt>Status</dt><dd>School project / not released</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="sec" id="context" aria-labelledby="h-context">
+  <div class="wide sec__grid">
+    
+    <div class="sec__main">
+      <h2 id="h-context">The brief</h2>
+
+      <p class="statement">Adi Atelier is a mobile app for fashion designers. Designers share their work as contributions and enter design competitions backed by Adidas.</p>
+      <div class="rows">
+        <div class="row"><h3>The starting point</h3><p>The concept, the branding and the first screens were already made when I joined the group.</p></div>
+        <div class="row"><h3>My part</h3><p>I joined for the second half of the project. We tested the first screens with users, then updated them.</p></div>
+        <div class="row"><h3>After the design</h3><p>The updated screens were not tested again. The group then moved on to development.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="testing" aria-labelledby="h-testing">
+  <div class="wide sec__grid">
+    
+    <div class="sec__main">
+      <h2 id="h-testing">User testing</h2>
+
+      <p class="statement">We tested the original screens with four task scenarios, in person on campus.</p>
+      <ol class="route route--down">
+        <li class="stop"><span class="node"></span><span class="tag">Create and manage a contribution</span><p>Creating, adding audio, posting and deleting were mostly clear. The preview step was not: testers did not know they had to select a picture to change it.</p></li>
+        <li class="stop"><span class="node"></span><span class="tag">Find and save a competition</span><p>Saving was clear. Finding the saved competition again was not: one tester went to the competition page, not the profile.</p></li>
+        <li class="stop"><span class="node"></span><span class="tag">Explore and support a designer</span><p>Finding a competition, viewing contributions, voting, opening a profile and following were clear. The notification setting was a little hidden.</p></li>
+        <li class="stop"><span class="node"></span><span class="tag">Enter with an existing project</span><p>Testers confused the folder with the gallery.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="identity" aria-labelledby="h-identity">
+  <div class="wide sec__grid">
+    
+    <div class="sec__main">
+      <h2 id="h-identity">Visual identity</h2>
+
+      <p class="statement">The brand was made before I joined. I worked within it.</p>
+      <div class="brand brand--adi">
+        <div class="marks">
+          <figure class="mark mark--logo"><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/logo.webp?v=1" alt="The adi atelier logo in butter white on blue" loading="lazy"><figcaption class="label">Primary logo</figcaption></figure>
+          <figure class="mark mark--icon"><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/icon.svg?v=1" alt="The adi atelier app icon, a letter a on blue" loading="lazy"><figcaption class="label">App icon</figcaption></figure>
+        </div>
+        <div class="swatches swatches--four">
+          <div class="swatch" style="background:#007ce0;color:#fff"><p class="label">Blue</p><em>#007CE0</em></div>
+          <div class="swatch" style="background:#ff9900;color:#000"><p class="label">Orange</p><em>#FF9900</em></div>
+          <div class="swatch" style="background:#000;color:#fff"><p class="label">Black</p><em>#000000</em></div>
+          <div class="swatch" style="background:#fffff6;color:#000"><p class="label">Butter white</p><em>#FFFFF6</em></div>
+        </div>
+      </div>
+      <div class="rows fonts">
+        <div class="row"><div><p class="label">DIN</p><img class="sample-img" src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/din-sample.svg?v=1" alt="The tagline Designed in the atelier in DIN capitals" loading="lazy"></div><div><h3>Headers and buttons</h3><p>Always in capitals.</p></div></div>
+        <div class="row"><div><p class="label">Merriweather</p><p class="sample sample--merri">Started with loose pencil sketches</p></div><div><h3>Text</h3><p>The text people write in the app.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="changes" aria-labelledby="h-changes">
+  <div class="wide sec__grid">
+    <div class="sec__side"><aside class="dec__stage" aria-label="The tested and updated screens for the change you are reading"><div class="stage"></div></aside></div>
+    <div class="sec__main">
+      <h2 id="h-changes">Changes after testing</h2>
+
+      <p class="statement">We updated the screens from the test notes. The updated screens were not tested again.</p>
+      <div class="dec">
+        <article class="dec__item">
+          <h3>Contribution details</h3>
+          <p>The contribution screen now has a title, a subtitle, a caption and an Add hashtag button.</p>
+          <div class="shots"><figure><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/v1-post.webp?v=4" alt="The tested contribution screen with a preview and a list of options" loading="lazy" data-zoom><figcaption class="label">Tested</figcaption></figure><figure><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/v2-post.webp?v=4" alt="The updated contribution screen with a title field, an Add photo area, a subtitle, a caption with an Add hashtag button and more photo slots" loading="lazy" data-zoom><figcaption class="label">Updated</figcaption></figure></div>
+        </article>
+        <article class="dec__item">
+          <h3>Existing or new</h3>
+          <p>Testers confused the folder with the gallery. The two options are now labelled Existing and New, each with a short line.</p>
+          <div class="shots"><figure><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/v1-entry.webp?v=4" alt="The tested choice screen with the labels Select and Create new" loading="lazy" data-zoom><figcaption class="label">Tested</figcaption></figure><figure><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/v2-entry.webp?v=4" alt="The updated choice screen with Existing and New options" loading="lazy" data-zoom><figcaption class="label">Updated</figcaption></figure></div>
+        </article>
+        <article class="dec__item">
+          <h3>Saved competitions</h3>
+          <p>One tester looked for saved competitions on the competition page. It now has a Saved competitions row under the tabs.</p>
+          <div class="shots"><figure><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/v1-competition.webp?v=4" alt="The tested competition page with the tabs Now, Soon, Finished and Saved" loading="lazy" data-zoom><figcaption class="label">Tested</figcaption></figure><figure><img src="https://agnijabirzkope-portfolio.vercel.app/assets/case-studies/adi-atelier/v2-competition.webp?v=4" alt="The updated competition page with a Saved competitions row under the tabs" loading="lazy" data-zoom><figcaption class="label">Updated</figcaption></figure></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="development" aria-labelledby="h-development">
+  <div class="wide sec__grid">
+    
+    <div class="sec__main">
+      <h2 id="h-development">Development</h2>
+
+      <p class="statement">After the redesign, the group built the app locally. It was not released.</p>
+      <div class="cols3 notes">
+        <div><h3 class="label">Front end</h3><p>Vue 3 with Vite, Vue Router, Pinia, Axios and SCSS. The app is made for phone screens.</p><ul class="chips"><li>Vue 3</li><li>Vite</li><li>Vue Router</li><li>Pinia</li><li>Axios</li><li>SCSS</li></ul></div>
+        <div><h3 class="label">Back end</h3><p>Node.js with Express, PostgreSQL on Neon, and Cloudinary for images.</p><ul class="chips"><li>Node.js</li><li>Express</li><li>PostgreSQL on Neon</li><li>Cloudinary</li></ul></div>
+      </div>
+      <h3 class="subtitle">My part</h3>
+      <p class="statement">I worked mostly on the front end. These are the parts of the app I built.</p>
+      <div class="rows">
+        <div class="row"><h3>Choosing music</h3><p>A page where designers search for a song and pick one for their contribution. The chosen song is highlighted.</p></div>
+        <div class="row"><h3>Hashtags</h3><p>A page with hashtag cards, so designers can add hashtags to their contribution.</p></div>
+        <div class="row"><h3>Preview pictures</h3><p>The step where designers pick which pictures show on the preview of their contribution.</p></div>
+        <div class="row"><h3>Competition pages</h3><p>The Now, Soon, Finished and Saved pages, with a card for each competition and the time left. Competitions can be saved and kept together on the Saved page.</p></div>
+        <div class="row"><h3>Back end set-up</h3><p>I also set up the first version of the back end.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <site-footer></site-footer>
+
+  <dialog class="lightbox" aria-label="Enlarged screen"><button class="lightbox__close" aria-label="Close">Close</button><img alt=""></dialog>
+
+</body>
+</html>

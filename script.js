@@ -13,9 +13,17 @@
   panels.forEach(p => {
     if (canHover) p.addEventListener('mouseenter', () => activate(p));
     p.addEventListener('focus', () => activate(p));
-    // touch: first tap opens the card, links inside still work once open
+    // the whole card is a link to its case study: click anywhere on it (a first tap on touch only opens the card)
+    const go = p.querySelector('.cta');
     p.addEventListener('click', (e) => {
-      if (!p.classList.contains('is-active')) { e.preventDefault(); activate(p); }
+      if (e.target.closest('a')) return;                 // the button itself works as a normal link
+      if (!canHover && !p.classList.contains('is-active')) { activate(p); return; }
+      if (go) location.href = go.href;
+    });
+    p.addEventListener('keydown', (e) => {
+      if (e.target !== p || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      if (go) location.href = go.href;
     });
   });
 

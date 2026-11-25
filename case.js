@@ -31,7 +31,7 @@
       const shots = $$('.shots img', item);
       const set = document.createElement('div');
       set.className = 'stage__set stage__set--' + shots.length;
-      shots.forEach((s) => { const c = s.cloneNode(true); c.removeAttribute('loading'); set.appendChild(c); });
+      shots.forEach((s) => { const node = s.closest('figure') || s; const c = node.cloneNode(true); const im = c.tagName === 'IMG' ? c : c.querySelector('img'); if (im) im.removeAttribute('loading'); set.appendChild(c); });
       stage.appendChild(set);
     };
     const apply = () => {
@@ -60,7 +60,8 @@
       queued = false;
       const line = innerHeight * 0.4;
       let cur = -1;
-      secs.forEach((s, i) => { if (s.getBoundingClientRect().top <= line) cur = i; });
+      /* the first section only counts once it has really reached the top, so the map never shows over the black landing screen */
+      secs.forEach((s, i) => { const at = i === 0 ? ($('.bar') || {}).offsetHeight + 90 || 154 : line; if (s.getBoundingClientRect().top <= at) cur = i; });
       const last = secs[secs.length - 1].getBoundingClientRect();
       index.classList.toggle('is-on', cur >= 0 && last.bottom > line);
       lis.forEach((li, i) => { li.classList.toggle('is-current', i === cur); li.classList.toggle('is-past', i < cur); });
@@ -80,8 +81,7 @@
   }
 
   /* ---------- planning route: fills as you scroll, stops light up when the line reaches them ---------- */
-  const route = $('.route');
-  if (route) {
+  $$('.route').forEach((route) => {
     const stops = $$('.stop', route);
     const line = document.createElement('div');
     line.className = 'route__line';
@@ -121,5 +121,56 @@
     addEventListener('resize', queue);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
     update();
-  }
+  });
+})();
+
+/* ---------- title band: the letters rise in one by one, then ride a slow wave and lift towards the cursor (like the home page) ---------- */
+(() => {
+  const title = document.querySelector('.hero__band .wide');
+  if (!title || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const label = title.textContent.trim();
+  title.textContent = '';
+  title.setAttribute('aria-label', label);
+  const chars = [];
+  label.split(' ').forEach((w, wi, all) => {
+    const word = document.createElement('span');
+    word.className = 'ch-word'; word.setAttribute('aria-hidden', 'true');
+    [...w].forEach((ch) => {
+      const outer = document.createElement('span');
+      outer.className = 'ch'; outer.style.setProperty('--i', chars.length);
+      const inner = document.createElement('span'); inner.textContent = ch;
+      outer.appendChild(inner); word.appendChild(outer);
+      chars.push({ inner, outer, y: 0 });
+    });
+    title.appendChild(word);
+    if (wi < all.length - 1) title.appendChild(document.createTextNode(' '));
+  });
+  const hero = document.querySelector('.hero');
+  let mx = -9999, size = 0, rects = [];
+  const measure = () => {
+    size = parseFloat(getComputedStyle(title).fontSize);
+    rects = chars.map((c) => { const r = c.outer.getBoundingClientRect(); return r.left + r.width / 2 + scrollX; });
+  };
+  measure();
+  addEventListener('resize', measure);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  hero.addEventListener('pointermove', (e) => { mx = e.clientX + scrollX; });
+  hero.addEventListener('pointerleave', () => { mx = -9999; });
+  let visible = true;
+  new IntersectionObserver((en) => { visible = en[0].isIntersecting; }).observe(hero);
+  const t0 = performance.now();
+  const tick = (now) => {
+    if (visible) {
+      const t = (now - t0) / 1000;
+      chars.forEach((c, i) => {
+        const wave = Math.sin(t * 1.4 - i * .75) * size * .018;
+        const d = (mx - rects[i]) / (size * .55);
+        const lift = -Math.exp(-d * d) * size * .12 * (mx > -9000 ? 1 : 0);
+        c.y += ((wave + lift) - c.y) * .12;
+        c.inner.style.transform = 'translateY(' + c.y.toFixed(2) + 'px)';
+      });
+    }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
 })();
