@@ -55,7 +55,7 @@ ul { list-style: none; }
 
 .hero__lead { margin: 0 28px; max-width: 28em; font-size: clamp(16px, 1.6vw, 24px); line-height: 1.3; font-weight: 500; color: #fff; animation: fadeUp .9s .5s var(--ease) both; }
 .hero__below { margin: 0 28px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; animation: fadeUp .9s .9s var(--ease) both; }
-.hero__who { font-size: clamp(30px, 4.4vw, 76px); font-weight: 900; line-height: 1; letter-spacing: -.04em; }
+.hero__who { font-size: clamp(30px, 4.4vw, 76px); font-weight: 900; line-height: 1; letter-spacing: -.012em; }
 .hero__role { margin-top: 8px; font-size: clamp(16px, 1.6vw, 24px); font-weight: 500; color: #fff; }
 .hero__open { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; flex: none; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .hero__open i { width: 9px; height: 9px; border-radius: 50%; background: var(--pink); flex: none; }

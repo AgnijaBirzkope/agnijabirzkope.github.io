@@ -32,6 +32,7 @@ a { color: inherit; }
 
 /* ---------- text ---------- */
 main p { max-width: var(--measure); }
+.sec__main > p { max-width: none; }
 main p + p { margin-top: .8em; }
 h1, h2, h3, h4 { font-weight: 900; color: inherit; }
 h3 { font-size: 16px; line-height: 1.3; letter-spacing: -.02em; }
@@ -290,11 +291,12 @@ h4 { font-size: 15px; line-height: 1.35; }
 .lead .statement { grid-column: 1 / span 2; }
 .lead__screen { grid-column: 3; margin: 0; }
 .lead__screen img { display: block; width: min(100%, 230px); height: auto; margin: 0 auto; cursor: zoom-in; box-shadow: 0 12px 28px rgba(10, 10, 10, .22); }
-.brand--adi .marks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
-.mark { margin: 0; }
-.mark img { display: block; width: 100%; height: auto; box-shadow: 8px 8px 0 var(--pink); }
-.mark--icon img { width: min(100%, 220px); }
-.mark figcaption { margin-top: 16px; }
+.brand--adi { gap: 12px; }
+.brand--adi .marks { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 12px; align-items: stretch; }
+.mark { display: flex; flex-direction: column; justify-content: space-between; margin: 0; padding: 22px 22px 0; background: #fff; min-height: 260px; }
+.mark img { display: block; width: min(100%, 320px); height: auto; margin: auto; }
+.mark--icon img { width: min(100%, 150px); }
+.mark figcaption { padding: 12px 0 14px; margin: 0; }
 .swatches--four { grid-template-rows: repeat(4, minmax(0, 1fr)); }
 .swatches--four .swatch { align-items: center; }
 .sample-img { display: block; width: min(100%, 300px); height: auto; margin-top: 10px; }
@@ -467,6 +469,7 @@ h4 { font-size: 15px; line-height: 1.35; }
 .idgrid__right .rows.fonts { margin: 0; }
 
 /* title band letters: rise in one by one, then ride the wave (script in case.js) */
+.hero__band .wide { word-spacing: .14em; }
 .ch-word { display: inline-block; vertical-align: top; white-space: nowrap; overflow: hidden; padding: .1em .12em .1em .04em; margin: -.1em -.12em -.1em -.04em; }
 .ch { display: inline-block; animation: chRise 1s var(--ease, cubic-bezier(.2, .7, .2, 1)) both; animation-delay: calc(.5s + var(--i) * .045s); }
 .ch > span { display: inline-block; will-change: transform; }

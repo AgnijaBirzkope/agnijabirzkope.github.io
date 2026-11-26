@@ -32,7 +32,7 @@
               <a href="https://agnijabirzkope-portfolio.vercel.app/agnija-birzkope-cv.pdf" target="_blank" rel="noopener"><span>CV</span><i></i></a>
             </nav>
           </div>
-          <p class="contact__foot"><span>© 2026 Agnija Birzkope</span><span>Open to internships Feb – May</span><a href="#top">Back to top</a></p>
+          <p class="contact__foot"><span>© 2026 Agnija Birzkope</span><span>Open to internships Feb to May</span><a href="#top">Back to top</a></p>
         </footer>`;
       // clicking the email copies it and says so
       this.querySelectorAll('a[href^="mailto:"]').forEach(link => {
