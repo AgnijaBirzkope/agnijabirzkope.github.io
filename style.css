@@ -256,7 +256,7 @@ ul { list-style: none; }
 .stop--end .node { background: var(--black); width: 24px; height: 24px; margin: 4px 0; }
 .stop.is-passed .node { background: var(--pink); }
 .stop.is-active .node { background: var(--pink); transform: scale(1.35) rotate(45deg); }
-.name { padding: .1em .3em; font-size: clamp(16px, 2.1vw, 34px); font-weight: 900; line-height: 1.05; letter-spacing: -.04em; text-transform: uppercase; color: rgba(10,10,10,.35); transition: background .3s ease, color .3s ease; text-wrap: balance; }
+.name { display: inline-block; padding: .22em .3em; text-box: trim-both cap alphabetic; font-size: clamp(16px, 2.1vw, 34px); font-weight: 900; line-height: 1.05; letter-spacing: -.04em; text-transform: uppercase; color: rgba(10,10,10,.35); transition: background .3s ease, color .3s ease; text-wrap: balance; }
 .name .num { font-size: .5em; letter-spacing: .08em; vertical-align: .55em; margin-right: .3em; }
 .stop--end .name { font-size: 12px; letter-spacing: .14em; color: var(--black); }
 .stop.is-reached .name { background: var(--black); color: var(--pink); }
