@@ -50,7 +50,6 @@ ul { list-style: none; }
 @keyframes chRise { from { transform: translateY(115%); } to { transform: none; } }
 .hero__word::before { animation: bandWipe 1s var(--ease) both; transform-origin: left; }
 @keyframes bandWipe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-.hero__sub { animation: fadeUp .9s .9s var(--ease) both; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
 .hero__lead { margin: 0 28px; max-width: 28em; font-size: clamp(16px, 1.6vw, 24px); line-height: 1.3; font-weight: 500; color: #fff; animation: fadeUp .9s .5s var(--ease) both; }
@@ -106,11 +105,6 @@ ul { list-style: none; }
   height: 28px;
 }
 .num { font-size: 13px; font-weight: 900; letter-spacing: .06em; white-space: nowrap; flex: none; }
-
-.tags { display: flex; gap: 6px; white-space: nowrap; margin-left: auto;
-  opacity: 0; transform: translateY(-6px); transition: opacity .4s ease, transform .4s ease; }
-.tags li { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  padding: 5px 10px; border: 1.5px solid currentColor; border-radius: 100px; }
 
 /* image fills the card width, edge to edge */
 .panel__media {
@@ -175,7 +169,6 @@ ul { list-style: none; }
   transform: none;
   transition: transform .35s ease-out, filter .6s ease;
 }
-.panel.is-active .tags { opacity: 1; transform: none; }
 .panel.is-active .panel__body { opacity: 1; pointer-events: auto; transition-delay: .35s; }
 .panel .cta:hover { opacity: .85; }
 
@@ -195,19 +188,11 @@ ul { list-style: none; }
 .about__notes { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; max-width: 900px; }
 .note p { font-size: clamp(15px, 1.2vw, 19px); line-height: 1.5; font-weight: 500; }
 .note .label { margin-bottom: 12px; }
-.note--low { margin-top: 56px; }
 .about__notes { grid-template-columns: minmax(0, 1fr); }
 
 /* ---------- experience: editorial row on dark ---------- */
 .exp { background: var(--bg); color: var(--grey); padding: 80px 28px 80px; border-top: 1px solid rgba(230,230,230,.18); }
-.exp__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr) clamp(100px, 9vw, 140px); gap: 40px; align-items: start; margin-top: 0; padding-top: 0; }
-.exp__meta { display: flex; flex-direction: column; gap: 6px; padding-top: .6em; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
-.exp__main h2 { margin: 0 0 20px; font-size: clamp(26px, 3.3vw, 54px); font-weight: 900; line-height: .98; letter-spacing: -.045em; text-transform: uppercase; }
-.exp__main h2 span { color: var(--pink); }
-.exp__big { max-width: 34em; font-size: clamp(20px, 2.1vw, 34px); font-weight: 900; line-height: 1.2; letter-spacing: -.03em; }
 .exp__text { max-width: 60ch; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.55; font-weight: 500; opacity: .9; }
-.badge { width: clamp(100px, 9vw, 140px); height: auto; flex: none; transform: rotate(8deg); }
-.badge__ring { transform-origin: 100px 100px; animation: spin 22s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* experience: one calm row, lined up with the photo and text columns above */
@@ -232,7 +217,6 @@ ul { list-style: none; }
   transition: padding-left .5s var(--ease);
 }
 .skill__head { display: flex; align-items: baseline; gap: 22px; }
-.skill__num { font-size: 12px; font-weight: 900; letter-spacing: .1em; opacity: .5; flex: none; }
 .skill h3 { font-size: clamp(20px, 1.9vw, 30px); font-weight: 900; line-height: .95; letter-spacing: -.045em; text-transform: uppercase; transition: color .3s ease; }
 .skill__body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px; padding-top: .5em; }
 .skill__label { margin: 0 0 8px; font-size: 10px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; opacity: .5; }
@@ -242,7 +226,6 @@ ul { list-style: none; }
 .skill li.tool { color: var(--pink); }
 .skill__solo { grid-column: 1 / -1; }
 /* UX/UI row: the three phases of my process, then the tools */
-.skill__body--phases { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 .phases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
 .phase ul { display: block; }
 .phase li { margin-bottom: 6px; }
@@ -257,9 +240,6 @@ ul { list-style: none; }
 .about .exp:first-of-type { margin-top: 96px; }
 .about .tools { margin: 96px -28px 0; padding: 80px 28px 80px; }
 .about .exp .label { color: inherit; }
-.about .exp__main h2 span { color: var(--pink); }
-.about .badge circle { fill: var(--black); }
-.about .badge text { fill: var(--pink); }
 
 
 
@@ -310,7 +290,6 @@ ul { list-style: none; }
   .panels.has-active .panel.is-active { flex-grow: 6; }
 
   .panel__top { left: 14px; right: 14px; top: 12px; }
-  .tags li { font-size: 9px; padding: 4px 8px; }
 
   /* collapsed: just number + title on colour; open: image + text appear */
   .panel__media { top: 48px; bottom: calc(var(--title-size) + 24px); opacity: 0; }
@@ -340,7 +319,7 @@ ul { list-style: none; }
   .hero__open { margin: 0; }
     .about, .exp, .tools { padding-left: 16px; padding-right: 16px; padding-top: 80px; }
   .about { padding-bottom: 80px; }
-  .about__cols, .exp__row, .about__grid { grid-template-columns: 1fr; gap: 28px; }
+  .exp__row { grid-template-columns: 1fr; gap: 28px; }
   .about__photo { max-width: 260px; }
   .skill { grid-template-columns: 1fr; gap: 22px; padding: 28px 0; }
   .skill__body { grid-template-columns: 1fr; gap: 20px; padding-top: 0; }
@@ -356,11 +335,7 @@ ul { list-style: none; }
   .about__layout { grid-template-columns: 1fr; gap: 44px; }
   .about__photo { max-width: 260px; margin-left: 12px; }
   .about__notes { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; }
-  .note--low { margin-top: 0; }
   .exp { padding: 56px 16px; }
-  .exp__layout { grid-template-columns: 1fr; gap: 20px; }
-  .exp__meta { padding-top: 0; flex-direction: row; gap: 14px; }
-  .badge { width: 110px; }
 }
 
 @media (max-width: 820px) {
