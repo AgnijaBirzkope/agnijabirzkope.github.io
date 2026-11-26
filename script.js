@@ -200,7 +200,8 @@
       let activeURL = null, activeW = 0;
 
       const show = async () => {
-        const target = Math.round(img.offsetWidth * (window.devicePixelRatio || 1));
+        // the opened picture is also enlarged by up to 1.3x with CSS, so make it that much bigger to stay sharp
+        const target = Math.round(img.offsetWidth * (window.devicePixelRatio || 1) * 1.3);
         if (!target) return;
         if (!activeURL || Math.abs(target - activeW) > 8) {
           activeW = target;
