@@ -29,7 +29,7 @@
             <nav class="contact__links" aria-label="Contact">
               <a href="mailto:birzkope.a@gmail.com"><span>birzkope.a@gmail.com</span><i></i></a>
               <a href="https://www.linkedin.com/in/agnija-birzkope-71b853339/" target="_blank" rel="noopener"><span>LinkedIn</span><i></i></a>
-              <a href="https://agnijabirzkope-portfolio.vercel.app/agnija-birzkope-cv.pdf" target="_blank" rel="noopener"><span>CV</span><i></i></a>
+              <a href="agnija-birzkope-cv.pdf" target="_blank" rel="noopener"><span>CV</span><i></i></a>
             </nav>
           </div>
           <p class="contact__foot"><span>© 2026 Agnija Birzkope</span><span>Open to internships Feb to May</span><a href="#top">Back to top</a></p>
